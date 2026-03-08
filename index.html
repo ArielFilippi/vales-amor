@@ -300,7 +300,11 @@
   <main class="wrap">
     <section class="hero">
       <div class="eyebrow">❤️ Sistema romántico autorizado</div>
-      <h1>Cupones del Amor</h1>
+      <h1 id="mainTitle" style="cursor:pointer;">Cupones del Amor</h1>
+
+<p id="secretMessage" style="display:none; margin:10px 0 0; color:#ffd6e1; font-weight:700;">
+Te amo muchísimo, por si el sistema no lo había dejado claro. ❤️
+</p>
       <p class="sub">Holis Politzia de las compras, Bienvenida al regalo supremo de beneficios inventado y creado solamente para vos, podes comenzar a deslizar y a utilizar tus cupones pero antes no olvides leer las reglas por que son muy importantes, Feliz cumpleaños</p>
       <div class="stats">
         <div class="stat"><small>Disponibles</small><strong id="availableCount">13</strong></div>
@@ -412,6 +416,8 @@
     const secretWrap = document.getElementById("secretWrap");
     const secretInput = document.getElementById("secretInput");
     const unlockAll = document.getElementById("unlockAll");
+    const mainTitle = document.getElementById("mainTitle");
+    const secretMessage = document.getElementById("secretMessage");
     const unlockToast = document.getElementById("unlockToast");
     const useToast = document.getElementById("useToast");
 
@@ -460,6 +466,23 @@
     function formatId(id) {
       return String(id).padStart(2, "0");
     }
+
+    function setupSecretMessage() {
+  let titleClicks = 0;
+
+  mainTitle.addEventListener("click", () => {
+    titleClicks++;
+
+    if (titleClicks >= 5) {
+      secretMessage.style.display = "block";
+
+      setTimeout(() => {
+        secretMessage.style.display = "none";
+        titleClicks = 0;
+      }, 4000);
+    }
+  });
+}
 
     function showUnlockCelebration() {
       unlockToast.classList.add("show");
@@ -662,8 +685,10 @@
 
     renderGrid();
     startBootSequence();
+    setupSecretMessage();
   </script>
 </body>
 </html>
+
 
 
