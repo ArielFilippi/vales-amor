@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cupones de Cumpleaño</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <div id="heartContainer"></div>
+
+    <div id="bootScreen" class="boot-screen">
+        <div class="boot-content">
+            <div class="boot-eyebrow">❤️ Acceso autorizado</div>
+            <div class="boot-title">Sistema de Cupones para Naii</div>
+            <div class="boot-message">
+                Bienvenida, Naii, Jaz o Amor. Espero que disfrutes y te diviertas mucho más
+                de lo que me divertí yo creándolo para vos. Te amo Jazmín, de todo corazón
+                y con lagrimitas en mis ojos te deseo un muy feliz cumpleaños, amor.
+                Recordá: ¡no merecés menos!
+            </div>
+            <div class="boot-progress">
+                <div id="bootBar" class="boot-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <main class="wrap">
+        <section class="hero">
+            <div class="eyebrow">❤️ Modo Cuponera Autorizado</div>
+
+            <h1 id="mainTitle" class="main-title">Cupones de Cumpleaño</h1>
+
+            <p id="secretMessage" class="secret-message">
+                Te amo muchísimo, por si el sistema no lo había dejado claro. ❤️
+            </p>
+
+            <p class="sub">
+                Holis Politzia de las compras, Bienvenida al regalo supremo de beneficios
+                inventado y creado solamente para vos, podes comenzar a deslizar y a utilizar
+                tus cupones pero antes no olvides leer las reglas por que son muy importantes,
+                Feliz cumpleaños
+            </p>
+
+            <div class="stats">
+                <div class="stat"><small>Disponibles</small><strong id="availableCount">13</strong></div>
+                <div class="stat"><small>Usados</small><strong id="usedCount">0</strong></div>
+                <div class="stat"><small>Especial</small><strong id="specialStatus">Bloqueado 🔒</strong></div>
+            </div>
+            <div class="progress-block">
+                <div class="progress-top">
+                    <span>Progreso del amor</span>
+                    <strong id="progressText">0 / 12</strong>
+                </div>
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="toolbar">
+            <div class="toolbar-left">
+                <input id="searchInput" class="search" type="search" placeholder="Buscar cupón..."
+                    aria-label="Buscar cupón" />
+                <select id="filterSelect" class="filter" aria-label="Filtrar cupones">
+                    <option value="all">Todos</option>
+                    <option value="available">Disponibles</option>
+                    <option value="used">Usados</option>
+                    <option value="locked">Bloqueado</option>
+                </select>
+            </div>
+
+            <div class="toolbar-right">
+                <button id="openRules" class="btn" type="button">Ver reglas</button>
+                <button id="toggleSecret" class="btn" type="button">Modo admin</button>
+                <button id="resetProgress" class="btn" type="button">Reiniciar progreso</button>
+            </div>
+        </section>
+
+        <div id="secretWrap" class="secret-wrap">
+            <input id="secretInput" class="secret-input" type="password" placeholder="Clave admin"
+                aria-label="Clave admin" />
+            <button id="unlockAll" class="btn" type="button">Desbloquear cupón 13</button>
+        </div>
+
+        <section id="voucherGrid" class="grid" aria-live="polite"></section>
+
+        <div id="emptyState" class="empty" hidden>
+            No encontré cupones con ese filtro. El amor sigue ahí; el buscador nomás se puso exquisito.
+        </div>
+
+        <p class="footer-note">
+            Hecho con amor para ti. <strong>Con cariño, Ariel ✨</strong>
+        </p>
+
+        <div id="unlockToast" class="unlock-toast" aria-live="assertive" aria-atomic="true">
+            <strong>✨ CUPÓN ESPECIAL DESBLOQUEADO ✨</strong>
+            <span>Se acaba de revelar una recompensa secreta. La ciencia del romance ha hecho lo suyo.</span>
+        </div>
+
+        <div id="useToast" class="use-toast" aria-live="polite" aria-atomic="true">
+            <strong>💘 Cupón utilizado</strong>
+            <span>El amor avanza al siguiente nivel.</span>
+        </div>
+    </main>
+
+    <dialog id="imageDialog">
+        <div class="modal">
+            <div class="modal-header">
+                <div>
+                    <div class="eyebrow" id="modalEyebrow">CUPÓN 01 / 13</div>
+                    <h2 id="modalTitle">Cupón</h2>
+                </div>
+                <button class="close" id="closeDialog" type="button">Cerrar ✕</button>
+            </div>
+
+            <div class="modal-image-wrap">
+                <img id="modalImage" class="modal-image" src="" alt="Vista ampliada del cupón" />
+            </div>
+
+            <div class="actions">
+                <button id="useVoucherBtn" class="btn primary" type="button">Marcar como usado</button>
+                <button id="cancelBtn" class="btn" type="button">Volver</button>
+            </div>
+        </div>
+    </dialog>
+
+    <div id="finalScreen" class="final-screen">
+        <div class="final-content">
+            <h2>MISIÓN COMPLETADA 💖</h2>
+            <p>
+                Todos los cupones han sido utilizados.<br>
+                Gracias por vivir esta pequeña aventura conmigo.
+            </p>
+            <p class="final-signature">
+                Con cariño, Ariel ✨
+            </p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
