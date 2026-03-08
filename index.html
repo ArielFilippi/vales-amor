@@ -301,7 +301,7 @@
     <section class="hero">
       <div class="eyebrow">❤️ Sistema romántico autorizado</div>
       <h1>Cupones del Amor</h1>
-      <p class="sub">Esta versión usa tus imágenes PNG reales. Nada de cupones inventados por código: la web muestra exactamente tus vales y tus reglas.</p>
+      <p class="sub">Holis Politzia de las compras, Bienvenida al regalo supremo de beneficios inventado y creado solamente para vos, podes comenzar a deslizar y a utilizar tus cupones pero antes no olvides leer las reglas por que son muy importantes, Feliz cumpleaños</p>
       <div class="stats">
         <div class="stat"><small>Disponibles</small><strong id="availableCount">13</strong></div>
         <div class="stat"><small>Usados</small><strong id="usedCount">0</strong></div>
@@ -367,7 +367,7 @@
   </dialog>
 
   <script>
-    const ADMIN_KEY = "cariño-rojo-13";
+    const ADMIN_KEY = "budun";
     const STORAGE_KEY = "valesDelAmorEstado";
 
     // Reemplaza estos nombres por los tuyos si difieren.
@@ -446,11 +446,11 @@
 
     function isUnlocked(voucher) {
       if (voucher.id !== 13) return true;
-      return state[13]?.unlocked || getUsedCount() >= 5;
+      return state[13]?.unlocked || getUsedCount() >= 12;
     }
 
     function updateSpecialUnlock() {
-      if (getUsedCount() >= 5 && !state[13].unlocked) {
+      if (getUsedCount() >= 12 && !state[13].unlocked) {
         state[13].unlocked = true;
         saveState();
         showUnlockCelebration();
@@ -665,4 +665,5 @@
   </script>
 </body>
 </html>
+
 
