@@ -1,0 +1,1 @@
+Proyecto creado a base de mucho cariño, con la idea de realizar un regalo original y unico para esa persona, el mismo se puede modificar por completo creando tus propios vales, agregando o quitando catidad de los mismos, modificando titulos y demas, es un codigo abierto para que todos aquellos que quieran puedan regalar de corazon algo bonito y creativo.

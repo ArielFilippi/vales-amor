@@ -288,6 +288,7 @@ function createCard(voucher) {
   `;
 
     card.querySelector("[data-open]").addEventListener("click", () => openVoucher(voucher.id));
+    card.style.animationDelay = `${voucher.id * 0.06}s`;
     return card;
 }
 
