@@ -1,0 +1,236 @@
+.eyebrow {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--accent-2);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.main-title {
+    cursor: pointer;
+}
+
+.secret-message {
+    display: none;
+    margin: 10px 0 0;
+    color: #ffd6e1;
+    font-weight: 700;
+}
+
+.sub {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.02rem;
+    max-width: 70ch;
+}
+
+.search,
+.filter,
+.btn,
+.secret-input {
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    padding: 12px 14px;
+    font: inherit;
+    outline: none;
+}
+
+.search {
+    min-width: min(330px, 100%);
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, var(--accent), #ff4f7d);
+    border-color: transparent;
+    box-shadow: var(--glow);
+}
+
+.card {
+    overflow: hidden;
+    padding: 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.25);
+    display: grid;
+    gap: 12px;
+}
+
+.card.used {
+    opacity: 0.72;
+}
+
+.ticket-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.ticket-id {
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    color: var(--accent-2);
+    font-weight: 800;
+}
+
+.badge {
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--muted);
+}
+
+.thumb-wrap {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    aspect-ratio: 1.6 / 1;
+}
+
+.thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.2;
+}
+
+dialog {
+    width: min(900px, calc(100% - 24px));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(20, 17, 39, 0.96), rgba(15, 16, 32, 0.98));
+    color: var(--text);
+    padding: 0;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.48);
+}
+
+dialog::backdrop {
+    background: rgba(5, 4, 12, 0.72);
+    backdrop-filter: blur(6px);
+}
+
+.modal {
+    padding: 24px;
+    display: grid;
+    gap: 18px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.modal h2 {
+    margin: 6px 0 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1;
+}
+
+.close {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text);
+    border-radius: 14px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.modal-image-wrap {
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.modal-image {
+    width: 100%;
+    display: block;
+    max-height: 75vh;
+    object-fit: contain;
+    background: #120f24;
+}
+
+.secret-wrap {
+    display: none;
+}
+
+.secret-wrap.show {
+    display: flex;
+}
+
+.empty {
+    border: 1px dashed rgba(255, 255, 255, 0.16);
+    border-radius: 24px;
+    padding: 28px;
+    text-align: center;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.progress-block {
+    margin-top: 6px;
+    display: grid;
+    gap: 10px;
+}
+
+.progress-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.progress-top strong {
+    color: var(--text);
+}
+
+.progress-track {
+    width: 100%;
+    height: 14px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), #ff7aa2);
+    box-shadow: 0 0 18px rgba(255, 47, 93, 0.35);
+    transition: width 0.4s ease;
+}
+
+.search-easter-egg {
+    display: none;
+    margin: 14px 0 0;
+    text-align: center;
+    color: #ffd6e1;
+    font-weight: 700;
+}

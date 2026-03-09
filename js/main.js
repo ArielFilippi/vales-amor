@@ -3,6 +3,7 @@ const searchInput = document.getElementById("searchInput");
 const filterSelect = document.getElementById("filterSelect");
 const voucherGrid = document.getElementById("voucherGrid");
 const emptyState = document.getElementById("emptyState");
+const searchEasterEgg = document.getElementById("searchEasterEgg");
 const availableCount = document.getElementById("availableCount");
 const usedCount = document.getElementById("usedCount");
 const specialStatus = document.getElementById("specialStatus");
