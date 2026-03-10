@@ -47,7 +47,7 @@ function createCard(voucher) {
     const unlocked = isUnlocked(voucher);
     const isSpecialLocked = voucher.id === 13 && !unlocked;
     const card = document.createElement("article");
-    card.className = `card ${used ? "used" : ""}`.trim();
+    card.className = `card ${used ? "used" : ""} ${voucher.id === 13 && unlocked ? "special-card" : ""}`.trim();
 
     const imageMarkup = isSpecialLocked
         ? `<div class="thumb-wrap" style="display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;color:var(--muted);font-weight:700;line-height:1.4;">🔒<br>Cupón especial oculto<br><span style="font-weight:400;opacity:.9;">Se revelará cuando llegue el momento.</span></div>`

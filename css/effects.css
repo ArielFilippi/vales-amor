@@ -86,6 +86,7 @@
     transform: translateY(-20px) scale(1);
     opacity: 1;
   }
+
   100% {
     transform: translateY(100vh) scale(1.5);
     opacity: 0;
@@ -97,6 +98,7 @@
     transform: translateY(-10vh) rotate(0deg);
     opacity: 1;
   }
+
   100% {
     transform: translateY(110vh) rotate(720deg);
     opacity: 0;
@@ -153,22 +155,22 @@
   margin: 0 auto;
   border-radius: 999px;
   overflow: hidden;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .boot-bar {
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, #ff2f5d, #ff7aa2);
-  box-shadow: 0 0 22px rgba(255,47,93,.5);
+  box-shadow: 0 0 22px rgba(255, 47, 93, .5);
 }
 
 .final-screen {
   position: fixed;
   inset: 0;
   background: radial-gradient(circle at top, rgba(255, 47, 93, 0.25), transparent 30%),
-              linear-gradient(160deg, #0f1020, #1a1633);
+    linear-gradient(160deg, #0f1020, #1a1633);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,4 +201,22 @@
   margin-top: 24px;
   font-weight: bold;
   color: var(--text);
+}
+
+.modal {
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+  animation: modalReveal 0.35s ease;
+}
+
+@keyframes modalReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
