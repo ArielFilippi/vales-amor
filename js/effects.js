@@ -62,6 +62,33 @@ function createConfettiBurst() {
     }
 }
 
+function createMiniConfettiExplosion(x, y) {
+    const colors = ["#ff5c8a", "#ffd166", "#ffffff", "#ff8fab", "#cdb4db"];
+    const pieces = 28;
+
+    for (let i = 0; i < pieces; i++) {
+        const piece = document.createElement("span");
+        piece.className = "mini-confetti";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 70 + Math.random() * 90;
+
+        const dx = Math.cos(angle) * distance;
+        const dy = Math.sin(angle) * distance;
+
+        piece.style.left = `${x}px`;
+        piece.style.top = `${y}px`;
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+        piece.style.setProperty("--x", `${dx}px`);
+        piece.style.setProperty("--y", `${dy}px`);
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => piece.remove(), 900);
+    }
+}
+
 function showUseCelebration(voucherId) {
     const message = voucherMessages[voucherId] || "El amor avanza al siguiente nivel.";
 

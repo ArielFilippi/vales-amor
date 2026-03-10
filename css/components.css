@@ -266,6 +266,33 @@ dialog::backdrop {
     animation: progressShine 2.6s linear infinite;
 }
 
+.progress-bar.sparkle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.45),
+            transparent);
+    animation: progressFlash 0.6s ease;
+}
+
+@keyframes progressFlash {
+    0% {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(30%);
+    }
+}
+
 @keyframes progressShine {
     to {
         transform: translateX(100%);

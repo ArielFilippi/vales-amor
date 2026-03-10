@@ -14,8 +14,22 @@ function renderProgress() {
     const used = Math.min(getUsedCount(), SECRET_UNLOCK_COUNT);
     const percent = (used / SECRET_UNLOCK_COUNT) * 100;
 
+    const previousWidth = parseFloat(progressBar.style.width) || 0;
+
     progressText.textContent = `${used} / ${SECRET_UNLOCK_COUNT}`;
     progressBar.style.width = `${percent}%`;
+
+    if (percent > previousWidth) {
+        progressBar.classList.remove("sparkle");
+
+        setTimeout(() => {
+            progressBar.classList.add("sparkle");
+
+            setTimeout(() => {
+                progressBar.classList.remove("sparkle");
+            }, 650);
+        }, 20);
+    }
 }
 
 function getFilteredVouchers() {
@@ -113,7 +127,7 @@ function openVoucher(voucherId) {
         useVoucherBtn.textContent = "Ya usado";
     } else {
         useVoucherBtn.disabled = false;
-        useVoucherBtn.textContent = "Marcar como usado";
+        useVoucherBtn.textContent = "Usar cupón 🎉";
     }
 
     if (voucher.id === 13 && unlocked) {
@@ -173,6 +187,13 @@ function markAsUsed() {
 
     state[currentVoucherId].used = true;
     saveState();
+
+    const rect = useVoucherBtn.getBoundingClientRect();
+    createMiniConfettiExplosion(
+        rect.left + rect.width / 2,
+        rect.top + rect.height / 2
+    );
+
     renderGrid();
     showUseCelebration(currentVoucherId);
     checkFinalCompletion();
@@ -181,19 +202,19 @@ function markAsUsed() {
 
 function checkFinalCompletion() {
 
-  const total = vouchers.length;
-  const used = vouchers.filter(v => state[v.id]?.used).length;
+    const total = vouchers.length;
+    const used = vouchers.filter(v => state[v.id]?.used).length;
 
-  if (used === total) {
+    if (used === total) {
 
-    const finalScreen = document.getElementById("finalScreen");
+        const finalScreen = document.getElementById("finalScreen");
 
-    if (finalScreen) {
-      setTimeout(() => {
-        finalScreen.classList.add("show");
-      }, 600);
+        if (finalScreen) {
+            setTimeout(() => {
+                finalScreen.classList.add("show");
+            }, 600);
+        }
+
     }
-
-  }
 
 }
