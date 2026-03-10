@@ -178,3 +178,22 @@ function markAsUsed() {
     checkFinalCompletion();
     openVoucher(currentVoucherId);
 }
+
+function checkFinalCompletion() {
+
+  const total = vouchers.length;
+  const used = vouchers.filter(v => state[v.id]?.used).length;
+
+  if (used === total) {
+
+    const finalScreen = document.getElementById("finalScreen");
+
+    if (finalScreen) {
+      setTimeout(() => {
+        finalScreen.classList.add("show");
+      }, 600);
+    }
+
+  }
+
+}

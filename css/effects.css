@@ -215,8 +215,31 @@
     opacity: 0;
     transform: scale(0.96) translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+
+.background-confetti {
+  position: fixed;
+  top: -10px;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+  animation: bgConfettiFall linear forwards;
+}
+
+@keyframes bgConfettiFall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(720deg);
   }
 }

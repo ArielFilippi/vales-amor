@@ -122,3 +122,29 @@ function startBootSequence() {
         bootBar.style.width = `${progress}%`;
     }, 260);
 }
+
+function startBackgroundConfetti() {
+
+    const colors = ["#ff5c8a", "#ffd166", "#ffffff", "#ff8fab", "#cdb4db"];
+
+    setInterval(() => {
+
+        const piece = document.createElement("span");
+        piece.className = "background-confetti";
+
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+        const duration = 6 + Math.random() * 6;
+
+        piece.style.animationDuration = duration + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+            piece.remove();
+        }, duration * 1000);
+
+    }, 900);
+
+}

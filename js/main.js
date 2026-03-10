@@ -94,6 +94,7 @@ function init() {
     renderGrid();
     startBootSequence();
     setupSecretMessage();
+    startBackgroundConfetti();
     setupEventListeners();
 }
 
