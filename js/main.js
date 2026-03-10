@@ -26,6 +26,7 @@ const mainTitle = document.getElementById("mainTitle");
 const secretMessage = document.getElementById("secretMessage");
 const unlockToast = document.getElementById("unlockToast");
 const useToast = document.getElementById("useToast");
+const useSound = document.getElementById("useSound");
 
 let heartInterval;
 let currentVoucherId = null;

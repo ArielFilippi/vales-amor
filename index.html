@@ -83,6 +83,8 @@
             <input id="secretInput" class="secret-input" type="password" placeholder="Clave admin"
                 aria-label="Clave admin" />
             <button id="unlockAll" class="btn" type="button">Desbloquear cupón 13</button>
+            <button id="showResetBtn" class="btn" type="button">Autorizar reinicio</button>
+            <button id="resetProgress" class="btn" type="button" style="display:none;">Reiniciar progreso</button>
         </div>
 
         <section id="voucherGrid" class="grid" aria-live="polite"></section>
@@ -150,6 +152,8 @@
     <script src="js/effects.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/main.js"></script>
+
+    <audio id="useSound" src="audio/coupon-pop.mp3" preload="auto"></audio>
 </body>
 
 </html>
