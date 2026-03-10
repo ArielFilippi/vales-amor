@@ -182,3 +182,20 @@ function startBackgroundConfetti() {
     }, 900);
 
 }
+
+function showNightEasterEgg() {
+    if (!nightToast) return;
+
+    const hour = new Date().getHours();
+
+    // madrugada: de 00:00 a 05:59
+    if (hour >= 0 && hour < 6) {
+        setTimeout(() => {
+            nightToast.classList.add("show");
+
+            setTimeout(() => {
+                nightToast.classList.remove("show");
+            }, 4200);
+        }, 1200);
+    }
+}

@@ -28,6 +28,7 @@ const secretMessage = document.getElementById("secretMessage");
 const unlockToast = document.getElementById("unlockToast");
 const useToast = document.getElementById("useToast");
 const useSound = document.getElementById("useSound");
+const nightToast = document.getElementById("nightToast");
 
 let heartInterval;
 let currentVoucherId = null;
@@ -95,6 +96,7 @@ function init() {
     startBootSequence();
     setupSecretMessage();
     startBackgroundConfetti();
+    showNightEasterEgg();
     setupEventListeners();
 }
 

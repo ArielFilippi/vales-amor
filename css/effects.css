@@ -279,3 +279,35 @@
   overflow: visible;
   z-index: 20;
 }
+
+.night-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%) translateY(18px) scale(0.98);
+  z-index: 25000;
+  min-width: 280px;
+  max-width: 520px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(180deg, rgba(36, 32, 70, 0.96), rgba(15, 16, 32, 0.98));
+  color: white;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.night-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.night-toast strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.98rem;
+  letter-spacing: 0.03em;
+}
