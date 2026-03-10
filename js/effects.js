@@ -66,6 +66,13 @@ function createMiniConfettiExplosion(x, y) {
     const colors = ["#ff5c8a", "#ffd166", "#ffffff", "#ff8fab", "#cdb4db"];
     const pieces = 28;
 
+    const layer = document.getElementById("modalConfettiLayer");
+    if (!layer) return;
+
+    const layerRect = layer.getBoundingClientRect();
+    const localX = x - layerRect.left;
+    const localY = y - layerRect.top;
+
     for (let i = 0; i < pieces; i++) {
         const piece = document.createElement("span");
         piece.className = "mini-confetti";
@@ -76,14 +83,14 @@ function createMiniConfettiExplosion(x, y) {
         const dx = Math.cos(angle) * distance;
         const dy = Math.sin(angle) * distance;
 
-        piece.style.left = `${x}px`;
-        piece.style.top = `${y}px`;
+        piece.style.left = `${localX}px`;
+        piece.style.top = `${localY}px`;
         piece.style.background = colors[Math.floor(Math.random() * colors.length)];
 
         piece.style.setProperty("--x", `${dx}px`);
         piece.style.setProperty("--y", `${dy}px`);
 
-        document.body.appendChild(piece);
+        layer.appendChild(piece);
 
         setTimeout(() => piece.remove(), 900);
     }

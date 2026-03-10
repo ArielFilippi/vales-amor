@@ -224,13 +224,14 @@
 
 .background-confetti {
   position: fixed;
+  display: block;
   top: -10px;
   width: 8px;
   height: 12px;
   border-radius: 2px;
   opacity: 0.7;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
   animation: bgConfettiFall linear forwards;
 }
 
@@ -245,12 +246,13 @@
 }
 
 .mini-confetti {
-  position: fixed;
+  position: absolute;
+  display: block;
   width: 10px;
   height: 14px;
   border-radius: 3px;
   pointer-events: none;
-  z-index: 10002;
+  z-index: 25;
   animation: miniConfettiBlast 0.9s ease-out forwards;
 }
 
@@ -264,4 +266,16 @@
     transform: translate(-50%, -50%) translate(var(--x), var(--y)) rotate(540deg) scale(0.7);
     opacity: 0;
   }
+}
+
+.modal {
+  position: relative;
+}
+
+.modal-confetti-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 20;
 }
