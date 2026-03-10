@@ -67,7 +67,9 @@ function showUseCelebration(voucherId) {
 
     if (useSound) {
         useSound.currentTime = 0;
-        useSound.play().catch(() => { });
+        useSound.play().catch(error => {
+            console.log("Error al reproducir sonido:", error);
+        });
     }
 
     useToast.querySelector("span").textContent = message;

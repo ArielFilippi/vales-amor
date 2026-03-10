@@ -18,6 +18,7 @@ const closeDialog = document.getElementById("closeDialog");
 const cancelBtn = document.getElementById("cancelBtn");
 const openRules = document.getElementById("openRules");
 const resetProgress = document.getElementById("resetProgress");
+const showResetBtn = document.getElementById("showResetBtn");
 const toggleSecret = document.getElementById("toggleSecret");
 const secretWrap = document.getElementById("secretWrap");
 const secretInput = document.getElementById("secretInput");
@@ -41,6 +42,15 @@ function setupEventListeners() {
     cancelBtn.addEventListener("click", () => dialog.close());
     openRules.addEventListener("click", openRulesImage);
 
+    showResetBtn.addEventListener("click", () => {
+        if (secretInput.value !== RESET_KEY) {
+            alert("Clave incorrecta. El reinicio sigue protegido.");
+            return;
+        }
+
+        resetProgress.style.display = "inline-flex";
+    });
+
     resetProgress.addEventListener("click", () => {
         if (!confirm("¿Seguro que quieres reiniciar el progreso?")) return;
         state = defaultState();
@@ -50,7 +60,13 @@ function setupEventListeners() {
     });
 
     toggleSecret.addEventListener("click", () => {
+        const isOpening = !secretWrap.classList.contains("show");
         secretWrap.classList.toggle("show");
+
+        if (!isOpening) {
+            resetProgress.style.display = "none";
+            secretInput.value = "";
+        }
     });
 
     unlockAll.addEventListener("click", () => {
